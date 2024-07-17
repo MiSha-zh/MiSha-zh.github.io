@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/auto-text-effect.css" />
+    <link rel="stylesheet" href="./css/expanding-cards.css" />
+
+    <title>PPT播放效果</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: white;
+            transition: transform 1s ease-in-out;
+        }
+        .slide:nth-child(1) { background-color: #000000; }
+        .slide:nth-child(2) { background-color: #000000; }
+        .slide:nth-child(3) { background-color: #000000; }
+    </style>
+</head>
+<body>
+    <!-- 第一个js页面 -->
+    <div class="slide list" style="transform: translateX(0);">
+        <h1 id="text">Starting...</h1>
+        <div>
+            <div id="text"></div>
+            <script src="auto-text-effect.js"></script>
+        </div>
+    </div>
+    <!-- 第二个js页面 -->
+    <div class="slide" style="transform: translateX(100%);">
+        <div class="container">
+            <div class="panel active" style="background-image: url('./img/SM.jpg');">
+              <h3>沙坡头建在麦草方格上的绿洲(中国国家地理网)</h3>
+            </div>
+            <div class="panel" style="background-image: url('./img/green\(fkw\).jpg')">
+              <h3>绿水青山就是金山银山(凤凰网)</h3>
+            </div>
+            <div class="panel" style="background-image: url('./img/smworld.png')">
+              <h3>世界沙漠日</h3>
+            </div>
+            <div class="panel" style="background-image: url('./img/green\(fkw\).jpg')">
+              <h3>绿水青山就是金山银山(凤凰网)</h3>
+            </div>
+            <div class="panel" style="background-image: url('./img/lb.jpg')">
+              <h3>确保民勤不成为第二个罗布泊——习近平</h3>
+            </div>
+          </div>
+    </div>
+    <!-- 第三个js页面 -->
+    <div class="slide" style="transform: translateX(200%);">
+        
+    
+    </div>
+
+    <div class="slide" style="transform: translateX(300%);">第四个js页面</div>
+    <div class="slide" style="transform: translateX(400%);">第五个js页面</div>
+    <div class="slide" style="transform: translateX(500%);">第六个js页面</div>
+    
+    <script src="./js/ppt.js"></script>
+    <script src="./js/expanding-cards.js"></script>
+    <script src="./js/auto-text-effect.js"></script>
+</body>
+</html>
 
