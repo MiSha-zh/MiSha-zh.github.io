@@ -7,7 +7,7 @@ let currentSlide = 0;
 // 定义切换幻灯片的函数
 function showSlide(index) {
     slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - index) * 100}%)`;
+        slide.style.transform = `translateY(${(i - index) * 100}%)`;
     });
 }
 

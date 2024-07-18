@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 
-
-.container {
+.container1 {
   display: flex;
   width: 90vw;
 }
 
-.panel {
+.panel1 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -21,7 +20,7 @@
   -webkit-transition: all 700ms ease-in;
 }
 
-.panel h3 {
+.panel1 h3 {
   font-size: 24px;
   position: absolute;
   bottom: 20px;
@@ -30,17 +29,17 @@
   opacity: 0;
 }
 
-.panel.active {
+.panel1.active1 {
   flex: 5;
 }
 
-.panel.active h3 {
+.panel1.active1 h3 {
   opacity: 1;
   transition: opacity 0.3s ease-in 0.4s;
 }
 
 @media (max-width: 480px) {
-  .container {
+  .container1 {
     width: 100vw;
   }
 
