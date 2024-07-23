@@ -12,7 +12,7 @@ function showSlide(index) {
 }
 
 // 定义滚动阈值
-const scrollThreshold = 50; // 可以根据需要调整这个值
+const scrollThreshold = 80; // 可以根据需要调整这个值
 
 // 监听鼠标滚轮事件
 document.addEventListener('wheel', (event) => {

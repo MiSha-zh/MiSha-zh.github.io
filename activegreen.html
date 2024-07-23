@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/auto-text-effect.css" />
+    <link rel="stylesheet" href="./css/expanding-cards.css" />
+    <link rel="stylesheet" href="./css/split-landing-page.css" />
+    <title>绿意行动</title>
+    <style>
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 109;
+            /* 确保在最顶层 */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #caa55cdf;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: rgb(255, 255, 255);
+            transition: transform 1s ease-in-out;
+        }
+
+        .slide:nth-child(1) {
+            background-color: #caa55cdf;
+        }
+
+        .slide:nth-child(2) {
+            background-color: #caa55cdf
+        }
+
+        .slide:nth-child(3) {
+            background-color: #caa55cdf;
+        }
+
+        .hidden11 {
+            display: none;
+        }
+
+        #hiddenContent1 {
+            margin-bottom: 100px;
+            width: 1000px;
+            /* 设置宽度 */
+            height: 700px;
+            /* 设置高度 */
+            padding: 1px;
+            /* 添加内边距 */
+            font-size: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas style="opacity: 0.8;">
+    </canvas>
+    <!-- 第一个js页面 -->
+    <div class="slide" style="transform: translateY(0);">
+        <h1 id="text">Starting...</h1>
+        <div>
+            <div id="text"></div>
+        </div>
+    </div>
+    <!-- 第二个js页面 -->
+    <div class="slide" style="transform: translateY(100%);z-index: 209;">
+        <div class="container1">
+            <div class="panel1 active1"
+                style="background-image: url('https://n.sinaimg.cn/sinakd20230314s/533/w800h533/20230314/337a-3f64c55311a2d52776a031573a8fccc6.jpg')">
+                <h3>沙坡头建在麦草方格上的绿洲(中国国家地理网)</h3>
+            </div>
+            <div class="panel1"
+                style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.284b5e0ff8c2088c131e552d0c0f35fe?rik=m82orKUIT%2bOd8w&riu=http%3a%2f%2fn.sinaimg.cn%2fsinacn20190821ac%2f143%2fw1743h800%2f20190821%2f0609-icmpfxa9424888.jpg&ehk=PgczpOuqj6L9OvygEAoNEOFGN3%2f0%2bGWgDDxF7ruqbIU%3d&risl=&pid=ImgRaw&r=0')">
+                <h3>绿水青山就是金山银山(凤凰网)</h3>
+            </div>
+            <div class="panel1"
+                style="background-image: url('https://x0.ifengimg.com/res/2023/DD20EA268C4AF6D9BBDF7DDED2BCD020AC1CC243_size91_w700_h524.jpg')">
+                <h3>世界沙漠日</h3>
+            </div>
+            <div class="panel1"
+                style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.a6bd1fba58a216f5e5c5cac908476f97?rik=9q%2fBIjJKcUUBdw&riu=http%3a%2f%2fvip-public.people.com.cn%2fphoto%2f2022%2f4%2f13%2f0ab22d6ded1243ad898c272071a42a8ednLi_m.jpg&ehk=mHXfedj1GrRv11OH%2bzJHEk%2bCy3L5RtATr%2fp74XKaXkg%3d&risl=&pid=ImgRaw&r=0');">
+                <h3>绿水青山就是金山银山(凤凰网)</h3>
+            </div>
+            <div class="panel1"
+                style="background-image: url('https://k.sinaimg.cn/n/sinakd20230516s/510/w800h510/20230516/800f-960c90f17f40ae2e0510ef0c6865b2ef.png/w700d1q75cms.jpg?by=cms_fixed_width')">
+                <h3>确保民勤不成为第二个罗布泊——习近平</h3>
+            </div>
+        </div>
+    </div>
+    <!-- 第三个js页面 -->
+    <div class="slide" style="transform: translateY(200%);z-index: 209;">
+        <div class="container">
+            <div class="split left">
+                <h1>榆林群众治沙场景</h1>
+                <a href="#" class="btn">上世纪50年代（记者 王甲铸 翻拍）</a>
+            </div>
+            <div class="split right">
+                <h1>俯瞰榆林镇北台</h1>
+                <a href="#" class="btn">70年前，这里曾几乎被沙漠淹没。（榆林市林业和草原局供图）</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide" style="transform: translateY(300%);text-align: center;z-index: 209;">
+        新中国初期,我国荒漠化速度快得惊人。当时荒漠化土地面积达262.2万平方公里,占全国国土面积的27.4%。仅内蒙古一地的荒漠就达到了118万平方公里，
+        几乎相当于两个德国的国土面积。<br />
+        近40年来，中国通过实施“三北”工程、京津冀风沙源治理工程、山水林田湖草沙一体化保护和修复工程等重大生态工程，<br />
+        到上世纪70年代,我国治沙防沙进入了“三北防护林”项目建设阶段。该项目投资高达数千亿元人民币,涉及13个省区,项目周期长达73年,被誉为世界上最大的人工林体系。40多年来,中国已完成该项目近六成目标,
+        种草造林超过6亿亩,初显成效。
+    </div>
+    <div class="slide" style="transform: translateY(400%);text-align: center;z-index: 209;">
+        10年来，中国完成治沙任务2033万公顷，53%的可治理沙化土地得到治理，荒漠化、沙化土地面积分别比10年前净减少500万公顷、433万公顷。<br />
+        绿水青山和金山银山，是对生态环境保护和经济发展的形象化表达，这两者绝不是对立的，而是辩证统一的。习近平总书记强调<br />
+        “我们既要绿水青山，也要金山银山。宁要绿水青山，不要金山银山，而且绿水青山就是金山银山。”<br />
+    </div>
+    <div class="slide" style="transform: translateY(500%);z-index: 209;">
+        <button id="showButton1">
+            稀松平常中迈出治沙第一步 你正在治沙的道路上<br />
+            动动手指，开启你的治沙道路
+            <!-- <img style="width: 10px;height: 10px;mix-blend-mode:multiply;" src="https://gd-hbimg.huaban.com/51cf047ac266a47626d4e9d43a0465b47ead26781aa9c-umN7Wu_fw658"> -->
+        </button>
+        <div id="hiddenContent1" class="hidden11">
+            <!-- 这是隐藏内容 -->
+            <div id="showButton1" style="top:100px;">
+                <h2>一个普通水龙头，一天的漏水量大约为（34.85）升。
+                    一个普通水龙头一年可以流出的水量约为12.72吨，‌即12720.25升12.72吨，
+                    ‌即12720.25升。‌可灌溉12亩地近600棵梭梭树</h2>
+                <img style="width: 50%;height: 50%;float: center;"
+                    src="https://tse3-mm.cn.bing.net/th/id/OIP-C.PmECLqKqUvtcmN4xBalEhgHaE8?rs=1&pid=ImgDetMain"
+                    onclick="toggleContent(this)">
+                <h2>
+                    一棵普通的大树，平均每天吸收的二氧化碳约为1千克，每包烟制造过程大约产生（0.98）千克二氧化碳。
+                    每个烟民少消费1包烟，相当于每天为世界多种1棵大树。……
+                </h2>
+                <img style="width: 50%;height: 50%;float: center;"
+                    src="https://ts1.cn.mm.bing.net/th/id/R-C.c6dc1876d2677b73032552141edbd54b?rik=0Gf22P%2fkT5qTyA&riu=http%3a%2f%2fp0.qhimg.com%2ft012480f32a29de25e2.jpg&ehk=QMzTOt8zb2sd34k9Qnf%2f12aZ5nEELBlU1enHf2IjWyo%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1"
+                    onclick="toggleContent(this)">
+                <h2>
+                    一个人每天浪费食物总量(279)克。
+                    中国每年浪费的粮食约3500万吨，这个数字接近中国粮食总产量的6%。浪费的食物折合粮食=3.5亿人一年的口粮需要。
+                    一年节约出的粮食，能减轻数万公顷土地压力，减少过度耕作导致的荒漠化风险
+                </h2>
+                <img style="width: 50%;height: 50%;float: center;"
+                    src="https://p5.itc.cn/q_70/images03/20210720/bbbd1e66ad364a2c89784f73090e0281.jpeg"
+                    onclick="toggleContent(this)">
+            </div>
+        </div>
+    </div>
+    <div class="slide" style="transform: translateY(600%);z-index: 209;"></div>
+</div>
+</body>
+<script src="./js/ppt.js"></script>
+<script src="./js/split-landing-page.js"></script>
+<script src="./js/expanding-cards.js"></script>
+<script src="./js/auto-text-effect.js"></script>
+<script src="./js/Shuye.js"></script>
+<script>
+    window.onload = function () {
+        document.getElementById('showButton1').addEventListener('click', function () {
+            var hiddenContent = document.getElementById('hiddenContent1');
+            if (hiddenContent.classList.contains('hidden11')) {
+                hiddenContent.classList.remove('hidden11');
+            } else {
+                hiddenContent.classList.add('hidden11');
+            }
+        });
+    };
+</script>
+
+</html>

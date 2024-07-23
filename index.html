@@ -1,89 +1,181 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/auto-text-effect.css" />
-    <link rel="stylesheet" href="./css/expanding-cards.css" />
-    <link rel="stylesheet" href="./css/split-landing-page.css" />
-    <title>退沙还林</title>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <link rel="stylesheet" href="./css/text-part3.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
+        /* 默认网页缩放百分之80显示 */
+        @media (max-width: 1889px) and (min-width: 1200px) {
+            html {
+                zoom: 125%;
+            }
+    
+            @-ms-viewport {
+                width: 1889px;
+            }
         }
-        .slide {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2em;
+    </style>
+    <title>我的首页</title>
+    <style>
+        a {
+            text-decoration: none;
             color: white;
-            transition: transform 1s ease-in-out;
         }
-        .slide:nth-child(1) { background-color: #000000; }
-        .slide:nth-child(2) { background-color: #000000; }
-        .slide:nth-child(3) { background-color: #000000; }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999; /* 确保在最顶层 */
+        }
+        .nav {
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
-    <!-- 第一个js页面 -->
-    <div class="slide" style="transform: translateY(0);">
-        <h1 id="text">Starting...</h1>
-        <div>
-            <div id="text"></div>
-            <script src="auto-text-effect.js"></script>
-        </div>
-    </div>
-    <!-- 第二个js页面 -->
-     <div class="slide" style="transform: translateY(100%);">
-        <div class="container1">
-            <div class="panel1 active1" style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.a6bd1fba58a216f5e5c5cac908476f97?rik=9q%2fBIjJKcUUBdw&riu=http%3a%2f%2fvip-public.people.com.cn%2fphoto%2f2022%2f4%2f13%2f0ab22d6ded1243ad898c272071a42a8ednLi_m.jpg&ehk=mHXfedj1GrRv11OH%2bzJHEk%2bCy3L5RtATr%2fp74XKaXkg%3d&risl=&pid=ImgRaw&r=0');">
-              <h3>沙坡头建在麦草方格上的绿洲(中国国家地理网)</h3>
+    <canvas style="opacity: 0.8;"></canvas>
+    <div class="container">
+       
+        <!-- 导航栏 -->
+        <section class="nav">
+            <!-- 导航栏内容 -->
+            <div class="container">
+                <!-- 左侧 -->
+                <section class="nav-left">
+                    <span class="logo"><svg t="1721285527521" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4871" width="50" height="50"><path d="M738.1 744.6c-12.1-0.1-23.9-1.5-35.2-3.7l-0.1 90.1-0.1 59c0 8.2 6.7 14.9 14.9 14.9H756c8.2 0 14.9-6.7 14.9-14.9l0.1-58.9 0.2-89.2c-10.6 1.9-21.6 2.8-33.1 2.7z" fill="#FB536C" p-id="4872"></path><path d="M709.6 336.8C698.9 210.2 605.4 109.5 456.1 109c-149-0.5-260 114.7-257.2 256.1C201.4 492 279.1 585 386.5 612.6c11.5 3 23.4 5.1 35.5 6.5v-57.6c0-20 15.3-36.2 34.1-36.2 17.1 0 31.8 12.9 34 33.2 0.2 2 1 3.7 0.9 5.9l-0.1 54.3c12-1.4 23.6-3.6 34.8-6.3 18.6-4.6 36-10.8 52.1-18.8-0.2-3.3-0.9-6.2-0.9-9.6 0.2-73.6 52.1-142.1 126.6-157.3 4.5-20.8 7-42.7 7-65.8 0.1-8-0.3-16.1-0.9-24.1z" fill="#99C236" p-id="4873"></path><path d="M490.1 558.6c-2.2-20.3-16.9-33.2-34-33.2-18.8 0-34.1 16.2-34.1 36.2v57.6c11.2 1.3 22.5 2.2 34.1 2.1 11.9-0.1 23.3-1 34.5-2.3h0.3l0.1-54.3c0.1-2.3-0.6-4-0.9-6.1z" fill="#8F3694" p-id="4874"></path><path d="M748.8 424.9c-3.7-0.3-7-1.1-10.8-1.2-11.9-0.2-23.5 0.9-34.5 3.2-16.2 75.4-60.5 134.5-125.8 166.9 1.1 23.5 6 44.6 14.3 63 15.5 33.9 42 58.4 75 72.8 11.3 4.9 23.1 9 35.7 11.4l0.1-53c0-10.7 8.6-25.8 22.9-31.2 3.4-1.3 6.9-2.2 10.9-2.2 4.1 0.1 7.7 1 11 2.2 16.9 5.8 23.6 22.8 23.6 33.8l-0.1 51.6c12.5-2 24.1-5.4 35.1-9.8 56.6-22.3 93.2-74.4 92.9-148.1-0.3-85.4-56.9-152.6-150.3-159.4z" fill="#00A9DC" p-id="4875"></path><path d="M747.8 656.8c-3.3-1.1-6.9-2-11-2.2-4 0-7.5 0.9-10.9 2.2-14.4 5.4-22.9 20.5-22.9 31.2l-0.1 53c11.4 2.2 23.1 3.6 35.2 3.7 11.5 0.1 22.5-0.8 33.2-2.5l0.1-51.6c0-11.1-6.8-28-23.6-33.8z" fill="#8F3694" p-id="4876"></path><path d="M577 584.2c0 3.4 0.7 6.3 0.9 9.6 65.3-32.3 109.6-91.4 125.8-166.9-74.6 15.2-126.6 83.7-126.7 157.3z" fill="#029F40" p-id="4877"></path><path d="M490.6 618.9c-11.2 1.3-22.7 2.2-34.5 2.3-11.6 0.1-22.9-0.8-34.1-2.1V742.6c26.7 5.8 49.7 18.2 68.5 35.3l0.2-75 0.1-46.2 0.1-34.4c-0.1-1.1-0.2-2.2-0.3-3.4z" fill="#FB536C" p-id="4878"></path><path d="M525.7 824.5c-9-17.8-20.9-33.5-35.2-46.6l-0.3 127.1H530c8.7 0 16.4-5.8 15.3-16-2.8-23.2-9.6-44.9-19.6-64.5z" fill="#00A9DC" p-id="4879"></path><path d="M422 742.6v162.5h68.2l0.3-127.1c-18.8-17.2-41.8-29.6-68.5-35.4z" fill="#8F3694" p-id="4880"></path><path d="M386.5 738.6c-0.6 0-1.1-0.1-1.6-0.1-45.9 0.4-84.8 17.3-112.9 44.7-12.3 12-22.3 26.2-30.1 41.9 27.8 10.9 43.1 35.1 48.8 65.1 1.6 8.6-4.5 15-12.4 15H422V742.6c-11.3-2.5-23-4-35.5-4z" fill="#00A9DC" p-id="4881"></path><path d="M224.4 889.1c1.5-23.2 7.8-44.7 17.4-64.1-9.7-3.8-20.8-6-33.6-6.3-7.1 0.3-13.7 1.5-20 3.1-34.1 8.4-57 34.1-62.4 68.3-1.4 9.1 4.5 15 12.4 15h101.4c-8.6 0-15.9-5.3-15.2-16z" fill="#99C236" p-id="4882"></path><path d="M290.6 890.1c-5.7-30-21-54.1-48.8-65.1-9.7 19.4-15.9 40.9-17.4 64.1-0.7 10.7 6.6 16 15.3 16h38.5c7.9 0 14-6.5 12.4-15z" fill="#029F40" p-id="4883"></path></svg></span>
+                    <span class="title"></span>
+                </section>
+                <!-- 右侧 -->
+                <section class="nav-right">
+                    <ul class="first">
+                        <li><a href="bigscreen.html">可视化大屏</a></li>
+                        <li><a href="losegreen.html">迷失的绿洲</a></li>
+                        <li><a href="protectgreen.html">绿色坚守</a></li>
+                        <li><a href="activegreen.html">绿意行动</a></li>
+                    </ul>
+                </section>
+                <!-- 面包按钮 -->
+                <div id="bread" class="bread-btn">
+                    <span><i class="iconfont icon-menu2"></i></span>
+                </div>
             </div>
-            <div class="panel1" style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.284b5e0ff8c2088c131e552d0c0f35fe?rik=m82orKUIT%2bOd8w&riu=http%3a%2f%2fn.sinaimg.cn%2fsinacn20190821ac%2f143%2fw1743h800%2f20190821%2f0609-icmpfxa9424888.jpg&ehk=PgczpOuqj6L9OvygEAoNEOFGN3%2f0%2bGWgDDxF7ruqbIU%3d&risl=&pid=ImgRaw&r=0')">
-              <h3>绿水青山就是金山银山(凤凰网)</h3>
+
+            <!-- 当屏幕宽度小于某个px时，所显示的下拉菜单 -->
+            <div id="drop" class="drop">
+                <ul class="drop-menu">
+                    <li><a href="index.html">可视化大屏</a></li>
+                    <li><a href="losegreen.html">迷失的绿洲</a></li>
+                    <li><a href="protectgreen.html">绿色坚守</a></li>
+                    <li><a href="activegreen.html">绿意行动</a></li>
+                </ul>
             </div>
-            <div class="panel1" style="background-image: url('https://x0.ifengimg.com/res/2023/DD20EA268C4AF6D9BBDF7DDED2BCD020AC1CC243_size91_w700_h524.jpg')">
-              <h3>世界沙漠日</h3>
+        </section>
+
+        <!-- 首页 -->
+        <section class="page home-page">
+            <span class="info">沙漠变绿洲</span>
+            <span class="info">不要让沙漠吞噬地球</span>
+            <span class="sub-info">
+                民勤被腾格里沙漠和巴丹吉林两大沙漠包围，凉山区东部和古浪县东北部沙漠逐步向绿洲推移。
+                    确保民勤不成为第二个罗布泊——习近平
+            </span>
+        </section>
+
+        <!-- 再探再报 -->
+        <section class="page first-page">
+            <div class="title">
+                <span><i class="iconfont icon-geren1"></i></span>
+                再探再报
             </div>
-            <div class="panel1" style="background-image: url('https://n.sinaimg.cn/sinakd20230314s/533/w800h533/20230314/337a-3f64c55311a2d52776a031573a8fccc6.jpg')">
-              <h3>绿水青山就是金山银山(凤凰网)</h3>
+            <div class="sentence-list">
+                <div class="box item">
+                    <div class=" img">
+                        <img src="https://www.gsdcri.com/upfiles/image/20231116/1700118469458267.jpeg" >
+                    </div>
+                    <span class="author">人民日报</span>
+                    <span class="words"><strong style="color: brown;">重磅！</strong>人民日报头版头条聚焦甘肃防沙治沙经验与成效</span>
+                </div>
+                <div class="box item">
+                    <div class="img">
+                        <img src="https://pic2.zhimg.com/v2-f11fef55d7028a3b31f5d22b45a98fb0_1200x500.jpg" >
+                    </div>
+                    <span class="author">河西走廊治沙之路</span>
+                    <span class="words">从武威市古浪县八步沙林场的三代治沙人，到武威市民勤县“老虎口”的梭梭林；
+                        从青土湖芦苇荡的碧波，到光伏治沙的一片“蓝海”……行走在甘肃河西走廊的防沙治沙点，
+                        看得最多的是“绿进沙退”，听得最多的是“久久为功”。
+                    </span>
+                </div>
+                <div class="box item">
+                    <div class="img">
+                        <img src="https://www.ts.cn/xwzx/shxw/202206/W020220606451232209106.jpeg" >
+                    </div>
+                    <span class="author">从沙漠公路到“一带一路”</span>
+                    <span class="words">新疆科学家徐新文的治沙之旅
+                    </span>
+                </div>
             </div>
-            <div class="panel1" style="background-image: url('https://k.sinaimg.cn/n/sinakd20230516s/510/w800h510/20230516/800f-960c90f17f40ae2e0510ef0c6865b2ef.png/w700d1q75cms.jpg?by=cms_fixed_width')">
-              <h3>确保民勤不成为第二个罗布泊——习近平</h3>
+        </section>
+        <!-- 响应式文字 -->
+        <section class="page Third-page">
+            <div class="box-text"><h2>你了解沙漠吗？</h2></div>
+            <div class="box-text"><h2>全世界陆地面积为1.62亿平方千米，占地球总面积的30.3%，</h2></div>
+            <div class="box-text"><h2>而沙漠面积已占陆地总面积的20%</h2></div>
+            <div class="box-text"><h2>值得人们警惕的是，这一占比远远不是顶点</h2></div>
+            <div class="box-text"><h2>地球陆地中1/3（4800万平方千米）是干旱、半干旱荒漠地区</h2></div>
+            <div class="box-text"><h2>而且每年以
+                <strong style="font-weight: bold;color: rgb(255, 128, 0)">6</strong>
+                万平方千米的速度扩大着</h2></div>
+            <div class="box-text"><h2>还有43%的土地正面临着沙漠化的威胁。</h2></div>
+        </section>
+        <!-- 沙漠简介页 -->
+        <section class="page second-page">
+            <div class="box">
+                <div class="img">
+                    <img src="http://www.people.com.cn/mediafile/pic/hydt/20190509/86/12219398097383965190.jpg" alt="">
+                </div>
+                <div class="comment">
+                    <span class="name">陕西省治沙研究所里的樟子松林</span>
+                    <span class="job">（记者 王甲铸 摄）</span>
+                </div>
             </div>
-          </div>
-    </div>
-    <!-- 第三个js页面 -->
-    <div class="slide" style="transform: translateY(200%);">
-      <div class="container">
-        <div class="split left">
-          <h1>榆林群众治沙场景</h1>
-          <a href="#" class="btn">上世纪50年代（记者 王甲铸 翻拍）</a>
-        </div>
-        <div class="split right">
-          <h1>俯瞰榆林镇北台</h1>
-          <a href="#" class="btn">70年前，这里曾几乎被沙漠淹没。（榆林市林业和草原局供图）</a>
-        </div>
-      </div>
+            <div class="box">
+                <div class="img">
+                    <img src="https://p1.ssl.qhmsg.com/t01704407d8fa0be5c6.jpg" alt="">
+                </div>
+                <div class="comment">
+                    <span class="name">中国沙漠</span>
+                    <span class="job">照片</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.c00a0e95f516106440b9eef4c0c09928?rik=yffmC61p3Z4Myw&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fphotoblog%2f1411%2f14%2fc1%2f40912666_40912666_1415937080265.jpg&ehk=BUw2x6PD96kgqtxq%2bkrq2FqCcu%2fRLrkUlGAVxgX4eVA%3d&risl=&pid=ImgRaw&r=0" alt="">
+                </div>
+                <div class="comment">
+                    <span class="name">沙漠中国</span>
+                    <span class="job">照片</span>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img">
+                    <img src="https://ts1.cn.mm.bing.net/th/id/R-C.488a00b43c91d1952c849ddee8d34a61?rik=0HEJadA7l0QodQ&riu=http%3a%2f%2fimg.pconline.com.cn%2fimages%2fupload%2fupc%2ftx%2fphotoblog%2f1411%2f14%2fc1%2f40912271_40912271_1415936526609.jpg&ehk=PRGMZmVS8s5%2foR%2feWMF8%2bInlAfslP3kp5gQBnY7ScW8%3d&risl=&pid=ImgRaw&r=0" alt="">
+                </div>
+                <div class="comment">
+                    <span class="name">甘肃敦煌</span>
+                    <span class="job">太平洋电脑网</span>
+                </div>
+            </div>
+        </section>
+
+
     </div>
 
-    <div class="slide" style="transform: translateY(300%);">第四个js页面</div>
-    <div class="slide" style="transform: translateY(400%);">第五个js页面</div>
-    <div class="slide" style="transform: translateY(500%);">第六个js页面</div>
-    
-    <script src="./js/ppt.js"></script>
-    <script src="./js/split-landing-page.js"></script>
-    <script src="./js/expanding-cards.js"></script>
-    <script src="./js/auto-text-effect.js"></script>
 </body>
+<script src="./js/text-part3.js"></script>
+<script src="./js/Shuye.js"></script>
+<script src="./js/index.js"></script>
 </html>

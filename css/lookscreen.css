@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.public-bg{
+    background:linear-gradient(to bottom, #ff8400, hsla(110, 100%, 27%, 0.775));
+}
+
+.public-title{
+    width: calc(100% - 20px);
+    height: 30px;
+    position: relative;
+    top: 20px;
+    left: 5px;
+    color: white;
+    padding-left: 20px;
+    line-height: 30px;
+    font-family: 微软雅黑;
+    font-size: 25px;
+}
+.public-title:before{
+    width: 4px;
+    height: 20px;
+    top: 5px;
+    position: absolute;
+    content: "";
+    background: #020e16;
+    border-radius: 2px;
+    left: 5px;
+}
+
+/* .content-body{
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(to top, #59ff005a, #1d8f06ab);
+    background-size: 100% 100%;
+    position: absolute;
+
+} */
+
+.header{
+    height: 70px;
+    width: 100%;
+/*    border: 1px solid red;*/
+}
+.header .header-left{
+    width: 50%;
+    float: left;
+    line-height: 70px;
+
+}
+.header .header-left span{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 34px;
+    letter-spacing:2px;
+    padding: 0 20px;
+}
+
+.header .header-time{
+    width: 48%;
+    line-height: 70px;
+    float: right;
+    text-align: right;
+    padding-right: 20px;
+}
+.header .header-time span{
+    color:#ffffff;
+    font-size: 18px;
+}
+.content{
+    width: 100%;
+    height: calc(100% - 75px);
+    position: absolute;
+}
+.content .content-con{
+    height: 100%;
+}
+.content .content-con .left-body{
+    width: 22%;
+    height: 100%;
+    float: left;
+    margin:0 0.3%;
+}
+.left-body .left-top{
+    width: 100%;
+    height: 27%;
+}
+.left-body .left-top .top-body{
+    width: 100%;
+    height: calc(100% - 30px);
+}
+.left-body .left-top .top-body .top-left{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+ .top-left-title{
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+ .top-left-title h6 {
+    color: #ffffff;
+}
+.top-left-title span{
+    margin-top: 30px;
+    display: inline-block;
+    color: #860404;
+
+/*    height: 80px;
+    line-height: 80px;*/
+}
+ .top-left-title span b{
+    font-size: 50px;
+     letter-spacing:5px;
+}
+.top-left-title img{
+    width: 90%;
+}
+.left-body .left-top .top-body .top-right{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+.left-body .left-con{
+    width: 100%;
+    height: 29%;
+    margin-top: 1.6%;
+}
+.title-nav{
+    width: 100%;
+    height: calc(100% - 30px);
+}
+.left-body .left-bottom{
+    width: 100%;
+    height: 35%;
+    margin-top: 1.6%;
+}
+
+.center-body{
+    width: 54%;
+    height: 100%;
+    margin:0 0.3%;
+    float: left;
+    /*border: 1px solid red;*/
+}
+.center-body .map{
+    width: 100%;
+    height: 100%;
+}
+.right-body{
+    width: 22%;
+    height: 100%;
+    float: right;
+    margin:0 0.3%;
+}
+
+.right-body .right-top{
+    width: 100%;
+    height: 32%;
+}
+.title-nav .top5-ul{
+    width: calc(100% - 20px);
+    height: calc(100% - 30px);
+    padding: 17px;
+}
+.title-nav .top5-ul ul{
+    width: 100%;
+    height: 100%;
+}
+.title-nav .top5-ul ul,li{
+    list-style: none;
+    font-size: 25px;
+}
+.title-nav .top5-ul ul>li{
+    width: 100%;
+    height: 20%;
+    color: #ffffff;
+    line-height: 68px;
+    justify-content: center;
+    font-size: 25px;
+}
+.title-nav .top5-ul ul li span{
+    margin-left: 3%;
+    font-size: 25px;
+}
+.title-nav .top5-ul ul li span:nth-child(1){
+    color:  #ffffff;
+    font-style: oblique;
+    /*width: 10%;*/
+    /*#20a8fe
+            #EB6841
+            #3FB8AF
+            #FE4365
+            #FC9D9A*/
+    display: inline-block;
+    text-align: center;
+    font-size: 25px;
+}
+
+.title-nav .top5-ul ul li span:nth-child(2){
+    width: 15%;
+    display: inline-block;
+    text-align: center;
+    height: 35px;
+    line-height: 30px;
+/*    height: 100%;*/
+    /*line-height: 100%;*/
+    vertical-align: center;
+    border-radius: 5px;
+    color: #ffffff;
+}
+.title-nav .top5-ul ul li:nth-child(1) span:nth-child(2),.title-nav .top5-ul ul li:nth-child(2) span:nth-child(2)
+,.title-nav .top5-ul ul li:nth-child(3) span:nth-child(2){
+    background: #9c0101;
+    font-size: 20px;
+}
+.title-nav .top5-ul ul li:nth-child(4) span:nth-child(2)
+,.title-nav .top5-ul ul li:nth-child(5) span:nth-child(2){
+    background: #df3e09;
+    font-size: 20px;
+}
+.title-nav .top5-ul ul li span:nth-child(3){
+    /*width: 15%;*/
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+}
+.title-nav .top5-ul ul li span:nth-child(4){
+    /*width: 15%;*/
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+}
+.title-nav .top5-ul ul li span:nth-child(5){
+    /*width: 20%;*/
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+}
+.title-nav .top5-ul ul li span:nth-child(6){
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+}
+.right-body .right-con{
+    width: 100%;
+    height: 25%;
+    margin-top: 2%;
+}
+.right-body .right-bottom{
+    width: 100%;
+    height: 40%;
+    margin-left: 0.1%;
+}
+
+.lookmap-box {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    transform: scale(1); /* 缩放到 67% */
+    transform-origin: top center; /* 缩放中心 */ 
+    background-color:#000f1e00;
+   
+}
+#leida {
+    width: 100%; /* 你可以根据需要调整宽度 */
+    height: 500px; /* 你可以根据需要调整高度 */
+    transform: scale(1.8); /* 你可以根据需要调整缩放比例 */
+    transform-origin: center; /* 确保缩放从中心开始 */
+    
+}
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/auto-text-effect.css" />
+    <link rel="stylesheet" href="./css/expanding-cards.css" />
+    <link rel="stylesheet" href="./css/split-landing-page.css" />
+    <title>退沙还林</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #986d2b;
+            font-family: 'Roboto', sans-serif;
+        }
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            color: rgb(255, 255, 255);
+            transition: transform 1s ease-in-out;
+        }
+        .slide:nth-child(1) { background-color: #986d2b; }
+        .slide:nth-child(2) { background-color:#986d2b; }
+        .slide:nth-child(3) { background-color: #986d2b;; }
+    </style>
+</head>
+<body>
+    <!-- 第一个js页面 -->
+    <div class="slide" style="transform: translateY(0);">
+        <h1 id="text">Starting...</h1>
+        <div>
+            <div id="text"></div>
+            <script src="auto-text-effect.js"></script>
+        </div>
+    </div>
+    <!-- 第二个js页面 -->
+     <div class="slide" style="transform: translateY(100%);">
+        <div class="container1">
+            <div class="panel1 active1" style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.a6bd1fba58a216f5e5c5cac908476f97?rik=9q%2fBIjJKcUUBdw&riu=http%3a%2f%2fvip-public.people.com.cn%2fphoto%2f2022%2f4%2f13%2f0ab22d6ded1243ad898c272071a42a8ednLi_m.jpg&ehk=mHXfedj1GrRv11OH%2bzJHEk%2bCy3L5RtATr%2fp74XKaXkg%3d&risl=&pid=ImgRaw&r=0');">
+              <h3>沙坡头建在麦草方格上的绿洲(中国国家地理网)</h3>
+            </div>
+            <div class="panel1" style="background-image: url('https://ts1.cn.mm.bing.net/th/id/R-C.284b5e0ff8c2088c131e552d0c0f35fe?rik=m82orKUIT%2bOd8w&riu=http%3a%2f%2fn.sinaimg.cn%2fsinacn20190821ac%2f143%2fw1743h800%2f20190821%2f0609-icmpfxa9424888.jpg&ehk=PgczpOuqj6L9OvygEAoNEOFGN3%2f0%2bGWgDDxF7ruqbIU%3d&risl=&pid=ImgRaw&r=0')">
+              <h3>绿水青山就是金山银山(凤凰网)</h3>
+            </div>
+            <div class="panel1" style="background-image: url('https://x0.ifengimg.com/res/2023/DD20EA268C4AF6D9BBDF7DDED2BCD020AC1CC243_size91_w700_h524.jpg')">
+              <h3>世界沙漠日</h3>
+            </div>
+            <div class="panel1" style="background-image: url('https://n.sinaimg.cn/sinakd20230314s/533/w800h533/20230314/337a-3f64c55311a2d52776a031573a8fccc6.jpg')">
+              <h3>绿水青山就是金山银山(凤凰网)</h3>
+            </div>
+            <div class="panel1" style="background-image: url('https://k.sinaimg.cn/n/sinakd20230516s/510/w800h510/20230516/800f-960c90f17f40ae2e0510ef0c6865b2ef.png/w700d1q75cms.jpg?by=cms_fixed_width')">
+              <h3>确保民勤不成为第二个罗布泊——习近平</h3>
+            </div>
+          </div>
+    </div>
+    <!-- 第三个js页面 -->
+    <div class="slide" style="transform: translateY(200%);">
+      <div class="container">
+        <div class="split left">
+          <h1>榆林群众治沙场景</h1>
+          <a href="#" class="btn">上世纪50年代（记者 王甲铸 翻拍）</a>
+        </div>
+        <div class="split right">
+          <h1>俯瞰榆林镇北台</h1>
+          <a href="#" class="btn">70年前，这里曾几乎被沙漠淹没。（榆林市林业和草原局供图）</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" style="transform: translateY(300%);">第四个js页面</div>
+    <div class="slide" style="transform: translateY(400%);">第五个js页面</div>
+    <div class="slide" style="transform: translateY(500%);">第六个js页面</div>
+    
+    <script src="./js/ppt.js"></script>
+    <script src="./js/split-landing-page.js"></script>
+    <script src="./js/expanding-cards.js"></script>
+    <script src="./js/auto-text-effect.js"></script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>中国沙漠可视化大屏</title>
+    <link rel="stylesheet" href="./css/lookscreen.css">
+    <style>
+        /* 默认网页缩放百分之80显示 */
+        @media (max-width: 1889px) and (min-width: 768px) {
+            html {
+                zoom: 50%;
+            }
+
+            @-ms-viewport {
+                width: 1889px;
+            }
+        }
+    </style>
+    <style>
+        .sea {
+            width: 100%;
+            height: 1500px;
+            background-color: whitesmoke;
+            background-image: linear-gradient(rgba(17, 52, 194, 0.89),
+                    rgba(140, 255, 0, 0.17)80%,
+                    rgba(190, 123, 55, 0.701));
+            border-radius: 5px;
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sea .title {
+            color: white;
+            font-size: 90px;
+            font-family: serif;
+            text-align: center;
+            line-height: 250px;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .sea .wave {
+            position: absolute;
+            top: -615%;
+            left: -120%;
+            width: 10000px; /* 根据需要调整宽度 */
+            height: 10000px; /* 根据需要调整高度 */
+            background: rgba(233, 195, 43, 0.778);
+            border-radius: 43%;
+            filter: opacity(0.1);
+            animation: drift linear infinite;
+            transform-origin: 50% 48%;
+        }
+
+        .sea .wave:nth-of-type(1) {
+            animation-duration: 6s;
+            background-color: rgba(255, 253, 250, 0.547);
+            filter: opacity(0.1);
+        }
+
+        .sea .wave:nth-of-type(2) {
+            animation-duration: 2s;
+        }
+
+        .sea .wave:nth-of-type(3) {
+            animation-duration: 11s;
+            background-color: rgba(147, 119, 63, 0.547);
+            filter: opacity(0.1);
+        }
+        .sea .wave:nth-of-type(4) {
+            animation-duration: 4s;
+            background-color: rgb(162, 99, 44);
+            filter: opacity(0.1);
+        } 
+        .sea .wave:nth-of-type(5) {
+            animation-duration: 9s;
+            background-color: rgb(167, 204, 216);
+            filter: opacity(0.1);
+        }
+        .sea .wave:nth-of-type(6) {
+            animation-duration: 15s;
+            background-color: rgb(162, 99, 44);
+            filter: opacity(0.1);
+        }
+        .sea .wave:nth-of-type(7) {
+            animation-duration: 20s;
+            background-color: rgba(132, 150, 230, 0.5);
+            filter: opacity(0.07);
+        }
+        .sea .wave:nth-of-type(8) {
+            animation-duration: 17s;
+            background-color: rgb(166, 115, 70);
+            filter: opacity(0.18);
+        }
+        .sea .wave:nth-of-type(9) {
+            animation-duration: 17s;
+            background-color: rgb(172, 121, 76);
+            filter: opacity(0.18);
+        }
+        .sea .wave:nth-of-type(10) {
+            animation-duration: 19s;
+            background-color: rgb(215, 162, 115);
+            filter: opacity(0.18);
+        }
+        @keyframes drift {
+            from {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body style="width: auto;">
+    <div class="box lookmap-box sea">
+        <p class="title">中国八大沙漠分布</p>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <div class="content-body ">
+            <div class="header">
+                <div class="header-left" >
+                    <span style="z-index: 1000;"></span>
+                </div>
+                <div class="header-time" >
+                    <span style="font-size: 30px;z-index: 1000; " id="time"></span>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content-con">
+                    <div class="left-body">
+                        <div class="left-top public-bg">
+                            <div class="public-title" style="font-size:30px;">我国对沙地治理成效显著</div>
+                            <div class="top-body">
+                                <div class="top-left">
+                                    <div class="top-left-title">
+                                        <!-- <h4 style="font-size:40px;color:#bacce8;">防沙治沙任务</h4> -->
+                                        <span style="font-size: 35px;">防沙治沙任务<b>2.82亿亩</b>
+                                            <svg t="1721379095225" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" p-id="12571" width="100"
+                                                height="100">
+                                                <path d="M519.83 854.68l-87.41-50.8-0.71-249.99 87.42 50.8 0.7 249.99z"
+                                                    fill="#FBB005" p-id="12572"></path>
+                                                <path d="M519.13 604.69l-87.42-50.8 91.08-52.58 87.41 50.8-91.07 52.58z"
+                                                    fill="#F9D375" p-id="12573"></path>
+                                                <path d="M610.2 552.11l0.71 249.98-91.08 52.59-0.7-249.99 91.07-52.58z"
+                                                    fill="#FFD33E" p-id="12574"></path>
+                                                <path
+                                                    d="M701.99 749.51l-87.41-50.8-0.96-337.77 87.41 50.79 0.96 337.78z"
+                                                    fill="#E86262" p-id="12575"></path>
+                                                <path
+                                                    d="M701.03 411.73l-87.41-50.79 91.08-52.59 87.41 50.8-91.08 52.58z"
+                                                    fill="#F98282" p-id="12576"></path>
+                                                <path
+                                                    d="M792.11 359.15l0.96 337.77-91.08 52.59-0.96-337.78 91.08-52.58z"
+                                                    fill="#F7706C" p-id="12577"></path>
+                                                <path d="M337.68 959.85l-87.42-50.8-0.51-179.38 87.42 50.8 0.51 179.38z"
+                                                    fill="#17AF7C" p-id="12578"></path>
+                                                <path d="M337.17 780.47l-87.42-50.8 91.08-52.59 87.42 50.8-91.08 52.59z"
+                                                    fill="#54D3A9" p-id="12579"></path>
+                                                <path d="M428.25 727.88l0.5 179.38-91.07 52.59-0.51-179.38 91.08-52.59z"
+                                                    fill="#1CC993" p-id="12580"></path>
+                                                <path d="M739.58 202.56l-30.66-17.81 11.3-48.62 30.66 17.82-11.3 48.61z"
+                                                    fill="#FBB005" p-id="12581"></path>
+                                                <path
+                                                    d="M573.16 336.26l-30.66-17.82 163.27-202.58 30.66 17.81-163.27 202.59zM703.98 109.85l-30.65-17.82 89.55-27.87 30.66 17.81-89.56 27.88z"
+                                                    fill="#F9D375" p-id="12582"></path>
+                                                <path
+                                                    d="M697.6 145.78l-30.66-17.82 6.39-35.93 30.65 17.82-6.38 35.93zM440.56 325.27l-30.66-17.82 132.6 10.99 30.66 17.82-132.6-10.99z"
+                                                    fill="#FBB005" p-id="12583"></path>
+                                                <path
+                                                    d="M261.12 575.95l-30.66-17.81L409.9 307.45l30.66 17.82-179.44 250.68z"
+                                                    fill="#F9D375" p-id="12584"></path>
+                                                <path
+                                                    d="M277.84 593.26l-30.65-17.82-16.73-17.3 30.66 17.81 16.72 17.31z"
+                                                    fill="#FBB005" p-id="12585"></path>
+                                                <path
+                                                    d="M703.98 109.85l89.56-27.88-26.46 114.47-27.5 6.12 11.3-48.61-177.62 220.39L442.3 363.5 277.84 593.26l-16.72-17.31 179.44-250.68 132.6 10.99 163.27-202.59-38.83 12.11 6.38-35.93z"
+                                                    fill="#FBC618" p-id="12586"></path>
+                                            </svg>
+                                        </span>
+                                    </div>
+
+                                </div>
+                                <div class="top-right">
+                                    <div class="top-left-title" style="margin-left:-30px;">
+                                        <!-- <h4 style="font-size:35px;color:#bacce8;    ">封禁保护沙化土地</h4> -->
+                                        <span style="font-size: 40px;">封禁保护沙化土地<b>2658万亩</b>
+                                            <svg t="1721379095225" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg" p-id="12571" width="100"
+                                                height="100">
+                                                <path d="M519.83 854.68l-87.41-50.8-0.71-249.99 87.42 50.8 0.7 249.99z"
+                                                    fill="#FBB005" p-id="12572"></path>
+                                                <path d="M519.13 604.69l-87.42-50.8 91.08-52.58 87.41 50.8-91.07 52.58z"
+                                                    fill="#F9D375" p-id="12573"></path>
+                                                <path d="M610.2 552.11l0.71 249.98-91.08 52.59-0.7-249.99 91.07-52.58z"
+                                                    fill="#FFD33E" p-id="12574"></path>
+                                                <path
+                                                    d="M701.99 749.51l-87.41-50.8-0.96-337.77 87.41 50.79 0.96 337.78z"
+                                                    fill="#E86262" p-id="12575"></path>
+                                                <path
+                                                    d="M701.03 411.73l-87.41-50.79 91.08-52.59 87.41 50.8-91.08 52.58z"
+                                                    fill="#F98282" p-id="12576"></path>
+                                                <path
+                                                    d="M792.11 359.15l0.96 337.77-91.08 52.59-0.96-337.78 91.08-52.58z"
+                                                    fill="#F7706C" p-id="12577"></path>
+                                                <path d="M337.68 959.85l-87.42-50.8-0.51-179.38 87.42 50.8 0.51 179.38z"
+                                                    fill="#17AF7C" p-id="12578"></path>
+                                                <path d="M337.17 780.47l-87.42-50.8 91.08-52.59 87.42 50.8-91.08 52.59z"
+                                                    fill="#54D3A9" p-id="12579"></path>
+                                                <path d="M428.25 727.88l0.5 179.38-91.07 52.59-0.51-179.38 91.08-52.59z"
+                                                    fill="#1CC993" p-id="12580"></path>
+                                                <path d="M739.58 202.56l-30.66-17.81 11.3-48.62 30.66 17.82-11.3 48.61z"
+                                                    fill="#FBB005" p-id="12581"></path>
+                                                <path
+                                                    d="M573.16 336.26l-30.66-17.82 163.27-202.58 30.66 17.81-163.27 202.59zM703.98 109.85l-30.65-17.82 89.55-27.87 30.66 17.81-89.56 27.88z"
+                                                    fill="#F9D375" p-id="12582"></path>
+                                                <path
+                                                    d="M697.6 145.78l-30.66-17.82 6.39-35.93 30.65 17.82-6.38 35.93zM440.56 325.27l-30.66-17.82 132.6 10.99 30.66 17.82-132.6-10.99z"
+                                                    fill="#FBB005" p-id="12583"></path>
+                                                <path
+                                                    d="M261.12 575.95l-30.66-17.81L409.9 307.45l30.66 17.82-179.44 250.68z"
+                                                    fill="#F9D375" p-id="12584"></path>
+                                                <path
+                                                    d="M277.84 593.26l-30.65-17.82-16.73-17.3 30.66 17.81 16.72 17.31z"
+                                                    fill="#FBB005" p-id="12585"></path>
+                                                <path
+                                                    d="M703.98 109.85l89.56-27.88-26.46 114.47-27.5 6.12 11.3-48.61-177.62 220.39L442.3 363.5 277.84 593.26l-16.72-17.31 179.44-250.68 132.6 10.99 163.27-202.59-38.83 12.11 6.38-35.93z"
+                                                    fill="#FBC618" p-id="12586"></path>
+                                            </svg>
+                                        </span>
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="left-con public-bg" style="padding-bottom: 100px;">
+                            <div class="public-title" style="font-size:30px;">五个典型省（自治区）沙化土地年变化<small
+                                    style="font-size: 15px;">（万平方公里）</small></div>
+                            <div class="title-nav" id="leida"></div>
+                        </div>
+                        <div class="left-bottom public-bg">
+                            <div class="public-title" style="font-size:30px;">全国国土利用状况</div>
+                            <div class="title-nav" id="wuran"></div>
+                        </div>
+                    </div>
+
+                    <div class="center-body">
+                        <div style="height: 70px; width: 100%;margin-left: 20%;">
+                            <span style=" letter-spacing:25px;font-size:100px;color:rgb(20, 42, 101);
+                        font-family:仿宋; font-weight: bold;"></span>
+                        </div>
+                        <div class="map" id="map">
+                        </div>
+                    </div>
+
+                    <div class="right-body">
+                        <div class="right-top public-bg">
+                            <div class="public-title" style="font-size:30px;">沙地主要分布省份</div>
+                            <div class="title-nav">
+                                <div class="top5-ul">
+                                    <ul>
+                                        <li>
+                                            <span>1</span>
+                                            <span>新疆</span>
+                                            <span>塔克拉玛干沙漠</span>
+                                            <span>戈壁</span>
+                                            <span>广泛沙质地区</span>
+                                        </li>
+                                        <li>
+                                            <span>2</span>
+                                            <span>内蒙古</span>
+                                            <span>库布齐沙漠</span>
+                                            <span>巴丹吉林沙漠</span>
+                                            <span>科尔沁沙地</span>
+                                        </li>
+                                        <li>
+                                            <span>3</span>
+                                            <span>甘肃</span>
+                                            <span>库姆塔格沙漠</span>
+                                            <span>西部和北部地区</span>
+                                        </li>
+                                        <li>
+                                            <span>4</span>
+                                            <span>青海</span>
+                                            <span>柴达木盆地</span>
+                                            <span>西部边缘地区</span>
+                                        </li>
+                                        <li>
+                                            <span>5</span>
+                                            <span>宁夏</span>
+                                            <span>毛乌素沙地</span>
+                                            <span>与内蒙古交界区域</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="right-con public-bg">
+                            <div class="public-title" style="font-size:30px;">全国用水总量占比</div>
+                            <div class="title-nav" id="huaxing"></div>
+                        </div>
+                        <div class="right-bottom public-bg">
+                            <div class="public-title" style="font-size:30px;">牲畜超载率</div>
+                            <div class="title-nav" id="zhexian"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="./js/lookscreen.js"></script>
+<script type="text/javascript" src="./js/china.js"></script>
+
+<script>
+    //顶部时间
+    function getTime() {
+        var myDate = new Date();
+        var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+        var myMonth = myDate.getMonth() + 1; //获取当前月份(0-11,0代表1月)
+        var myToday = myDate.getDate(); //获取当前日(1-31)
+        var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+        var myHour = myDate.getHours(); //获取当前小时数(0-23)
+        var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+        var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+        var week = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+        var nowTime;
+
+        nowTime = myYear + '年' + fillZero(myMonth) + '月' + fillZero(myToday) + '日' + '&nbsp;&nbsp;' + fillZero(myHour) + ':' + fillZero(myMinute) + ':' + fillZero(mySecond) + '&nbsp;&nbsp;' + week[myDay] + '&nbsp;&nbsp;';
+        //console.log(nowTime);
+        $('#time').html(nowTime);
+    };
+    function fillZero(str) {
+        var realNum;
+        if (str < 10) {
+            realNum = '0' + str;
+        } else {
+            realNum = str;
+        }
+        return realNum;
+    }
+    //大屏
+    setInterval(getTime, 1000);
+</script>

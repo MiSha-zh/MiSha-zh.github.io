@@ -25,6 +25,7 @@ h1 {
   font-size: 4rem;
   color: #fff;
   position: absolute;
+  text-shadow:5px 5px 6px #000000;
   left: 50%;
   top: 20%;
   transform: translateX(-50%);
@@ -40,6 +41,7 @@ h1 {
   top: 40%;
   transform: translateX(-50%);
   text-decoration: none;
+  text-shadow:5px 5px 6px #000000;
   color: #fff;
   border: #fff solid 0.2rem;
   font-size: 1rem;

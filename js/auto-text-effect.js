@@ -1,7 +1,7 @@
 const textEl = document.getElementById('text');
-const text = '你知道退沙还林吗？';
+const text = '绿意行动——每个人的环保力量';
 let idx = 1;
-const speed = 200; // 固定速度
+const speed1 = 200; // 固定速度
 
 writeText();
 
@@ -11,7 +11,7 @@ function writeText() {
     idx++;
 
     if (idx <= text.length) {
-        setTimeout(writeText, speed);
+        setTimeout(writeText, speed1);
     }
 }
 

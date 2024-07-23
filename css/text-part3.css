@@ -1,0 +1,110 @@
+.box-text {
+  background-color: rgba(255, 255, 255, 0);
+  color: #1a1918;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100em;
+  height: 10em;
+  margin: 10em;
+  font-family: 微软雅黑;
+  border-radius: 10px;
+  /* box-shadow: 2px 4px 5px rgba(240, 156, 38, 0.3); */
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.9s ease;
+  z-index: 100;
+}
+.box-text:nth-of-type(even) {
+  transform: translateY(-100%);
+}
+
+.box-text.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.box-text h2 p {
+  font-size: 40px;
+  white-space: pre-wrap; /* 允许换行 */
+}
+
+
+.sea {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+  background-image: linear-gradient(
+		rgba(174, 123, 46, 0.921),
+		rgba(79, 171, 46, 0.93) 80%,
+		rgba(250, 176, 58, 0.5));
+  position: relative;
+  overflow: hidden;
+}
+ 
+.sea .title {
+  color: white;
+  font-size: 48px; /* 放大字体 */
+  font-family: serif;
+  text-align: center;
+  line-height: 100vh; /* 垂直居中 */
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+
+.sea .wave {
+  position: absolute;
+  top: -50%; /* 调整位置 */
+  left: -50%; /* 调整位置 */
+  width: 200%; /* 放大宽度 */
+  height: 200%; /* 放大高度 */
+  background: rgb(194, 136, 66);
+  border-radius: 43%;
+  filter: opacity(0.2);
+  animation: drift linear infinite;
+  transform-origin: 50% 48%;
+}
+
+.sea .wave:nth-of-type(1) {
+  animation-duration: 10s; /* 调整动画速度 */
+}
+
+.sea .wave:nth-of-type(2) {
+  animation-duration: 10s; /* 调整动画速度 */
+  background-color: rgb(53, 157, 46);
+  filter: opacity(0.1);
+}
+
+.sea .wave:nth-of-type(3) {
+  animation-duration: 8s; /* 调整动画速度 */
+  background-color: rgb(193, 116, 49);
+  filter: opacity(0.1);
+}
+.sea .wave:nth-of-type(4) {
+  animation-duration: 20s; /* 调整动画速度 */
+  background-color: rgba(203, 140, 53, 0.868);
+  filter: opacity(0.05);
+}
+.sea .wave:nth-of-type(5) {
+  animation-duration: 16s; /* 调整动画速度 */
+  background-color: rgba(248, 248, 248, 0.868);
+  filter: opacity(0.05);
+}
+@keyframes drift {
+  from {
+      transform: rotate(360deg);
+  }
+}
+/* 图片渐渐显现 */
+.fade-in {
+  opacity: 0;
+  transition: transform 0.9 ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+}

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <link rel="stylesheet" href="./css/text-part3.css">
+    <script src="https://www.jq22.com/jquery/echarts-4.2.1.min.js"></script>
+   
+    <style>
+        /* 默认网页缩放百分之80显示 */
+        @media (max-width: 1889px) and (min-width: 1200px) {
+            html {
+                zoom: 80%;
+            }
+    
+            @-ms-viewport {
+                width: 1889px;
+            }
+        }
+    </style>
+    <title>迷失的绿洲</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            /* 确保在最顶层 */
+        }
+        .nav {
+            z-index: 700;
+        }
+        #zhexian {
+            width: 100%;
+            height: 300px;
+            z-index: 980;
+        }
+        #pieChart {
+            width: 100%;
+            height: 500px;
+            z-index: 980;
+        }
+        #pieChart2 {
+            width: 100%;
+            height: 250px;
+            z-index: 980;
+        }
+        #sandian {
+            width: 100%;
+            height: 250px;
+            z-index: 980;
+        }
+        #pieChart3 {
+            width: 100%;
+            height: 500px;
+            z-index: 980;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas style="opacity: 0.8;"></canvas>
+    <div class="container" >
+        <!-- 自然原因 -->
+        <section class="page Third-page sea">
+            <div class="nav-left" style="float:left;position: absolute; top:0.5%; left: 3%;z-index: 990;">
+                <p style="font-family: 华文琥珀;font-size: 35px;color: #000000;">迷失的绿洲</p>
+                <p style="font-family: 华文琥珀;font-size: 20px;color: #000000;margin-left: 150px;">——人类活动与自然环境的双刃剑</p>
+                <p style="font-family: 华文琥珀;font-size: 20px;color: #000000;">沙漠的形成（自然原因）</p>
+            </div>
+            <span class="wave" style="z-index: 50;"></span>
+            <span class="wave" style="z-index: 52;"></span>
+            <span class="wave" style="z-index: 54;"></span>
+            <span class="wave" style="z-index: 56;"></span>
+            <span class="wave" style="z-index: 58;"></span>
+            <div style="width: auto;height: 300px;"></div>
+            <div class="box-text">
+                <img  style="height:680px;width:90%;" src="https://ts1.cn.mm.bing.net/th/id/R-C.3eea1b819f0d7c366c5eb74dadca7a2e?rik=kzn1G9CnAhjM%2fg&riu=http%3a%2f%2fimg.zdwx.net%2fgroup3%2fM00%2f00%2fED%2fwKgCG15aMomAWJR4AAtFgHd6qnA097.jpg&ehk=f4%2b%2fo3t6BkQ%2fZm5SWaJtQ4PWd9qn%2f3IW8k60Z6Gi%2fGg%3d&risl=&pid=ImgRaw&r=0">
+            </div>
+            <div class="box-text">
+                <h2>沙漠与戈壁<br />
+                    集中分布在中国的<strong style="color: rgb(150, 11, 11);">西北地区</strong><br />
+                    一起构成了中国荒漠的主要景观<br />
+                    其中<br /></h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    沙漠面积约<strong style="color: rgb(150, 11, 11);">68.8万平方千米</strong><br />
+                    戈壁面积约<strong style="color: rgb(150, 11, 11);">45.8万平方千米</strong><br />
+                    总计相当于<strong style="color: rgb(150, 11, 11);">11个浙江省</strong><br />
+                    大小约占中国陆地国土面积的12%<br />
+                </h2>
+
+            </div>
+            <div class="box-text">
+                <h2>距今6500万年以来<br />
+                    印度板块向欧亚板块俯冲碰撞<br />
+                    青藏高原以迅猛之势持续隆升<br />
+                </h2>
+            </div>
+            <img   id="animated-image"  style="max-width: 30%; height: auto;"
+                src="https://mmbiz.qpic.cn/mmbiz_gif/PziaXk2Dvl07BvcQFic7tdHYuw0Kwdkqib5liaJrtwO8TDGIjtGma6z4EqQAFvicdfpgPMApryNmFy1wibPzMh24unUw/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+            <div class="box-text">
+                <h2>
+                    不断隆起的高原、山地<br />
+                    阻挡了水汽<br />
+                    西北地区深居内陆<br />
+                    水汽难以抵达<br />
+                    干旱降临西北<br />
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    干旱致使<br />
+                    高山之上植被稀少<br />
+                    岩石成片裸露<br />
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>岩石在温度变化、冻融、有机体、水、风和重力等物理机械作用下崩解、破碎成大小不一碎屑和颗粒。岩石由线胀和体胀系数不同的多种矿物组成，季节性或昼夜的温度变化，长期的热胀冷缩交替会使岩石不均一缩胀而逐渐破碎。岩石裂隙中水分遇冷结冰并膨胀产生的巨大压力，使岩石崩解。如此往复高山上的岩石分解为砾石和沙粒被统称为碎屑物质。岩石物理风化过程，包括两种最常见的方式：温差风化与冻融风化。
+                </h2>
+            </div>
+            <img  id="animated-image"  style="max-width: 30%; height: auto;"
+                src="https://mmbiz.qpic.cn/mmbiz_gif/PziaXk2Dvl06aU2raP3tCQBmgkcUOzG133NUonEavUd0Ac4RWbr8Ubpqiabm3icOAKrPyyoMz90jH9icsPq22JGl3Q/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+            <div class="box-text">
+                <h2>
+                    流水携带碎屑<br />
+                    穿过群山万壑<br />
+                    在山麓地带铺陈开来<br />
+                    流水下渗、蒸发<br />
+                    风将细沙带往别处<br />
+                    留下砾石与粗沙<br />
+                    戈壁诞生了<br />
+                    被称为堆积戈壁<br />
+                </h2>
+            </div>
+            <img  id="animated-image" style="max-width: 30%; height: auto;" src="https://mmbiz.qpic.cn/mmbiz_gif/PziaXk2Dvl07m9lSeLJgkaN46icAU0ej6WpZfv9UJiaNRAcdpz1Q6xlXicCaYxMquoP4EeI7LN3SiaxfxNf37eHicYdQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+            <div class="box-text">
+                <h2>风的塑造不止针对砾石与岩石，高山上的冰雪融水与降水曾形成水量丰沛的河流与湖泊大量碎屑物质随着流水在河底、湖底堆积并慢慢固结当河湖因干旱而消亡厚厚的沉积物便会露出在长年累月的大风吹拂下雅丹地貌便诞生了。</h2>
+            </div>
+            <img  id="animated-image" style="max-width: 30%; height: auto;"   class="" src="https://mmbiz.qpic.cn/mmbiz_gif/PziaXk2Dvl048q6PticNNO6nUicAOERsBhCzG7WUqo3VZ2cDic0RWCmEbXGJTc4wicgLqibPia4Q2NYx2I1jfzqtrOIxQ/640?wx_fmt=gif&tp=webp&wxfrom=5&wx_lazy=1">
+            <div class="box-text">
+                <h2>
+                    至此<br />
+                    风与水将碎屑物质搬运出高山<br />
+                    并塑造出戈壁、雅丹等一系列地貌<br />
+                    而在这个过程中<br />
+                    一些较细的颗粒物被风吹走<br />
+                    并在其他地方落下、聚积<br />
+                    最终形成了<br />
+                    <strong style="color: rgb(150, 11, 11);">沙漠</strong><br />
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    （来源：星球研究所）
+                </h2>
+            </div>
+            <!-- 人为原因 -->     
+            <section class="box-text">
+                <div class="nav-left" style="float:left;position: absolute; top:0.5%; left: 0%;z-index: 990;">
+                    <p style="font-family: 华文琥珀;font-size: 35px;color: #000000;">迷失的绿洲</p>
+                    <p style="font-family: 华文琥珀;font-size: 20px;color: #000000;margin-left: 150px;">——人类活动与自然环境的双刃剑</p>
+                    <p style="font-family: 华文琥珀;font-size: 20px;color: #000000;">沙漠的形成（人为原因）</p>
+                </div> 
+            </section>
+            <div class="box-text" style="margin-top: -150px;">
+                <div style="height: 45%; width: 80%;">
+                    <div style="font-size:20px ;border: 1px solid #000; padding: 10px; width: 38%; float: left;">
+                        &nbsp;&nbsp;&nbsp;根据中华人民中国农业农村部2008年至2016年《全国草原监测报告》数据可得出结论：全国重点天然草原的牲畜一直存在超载现象，过度放牧导致植被覆盖减少，‌进一步加剧了土壤的侵蚀和荒漠化过程。‌曾经肥沃的土地的裸露和退化过程是产生沙漠的循环（‌也叫沙漠化）‌的开始。‌地表裸露导致近地表的徽气候变得不适合种子的萌芽，‌干燥的裸露地表更多地反射太阳热量，‌改变风场状况，‌带走潮湿的空气，‌导致进一步的干燥，沙漠化加剧。
+                    </div>
+                    <div style="border: 1px solid #000; padding: 1px; width: 50%; float: right;">
+                        <div id="zhexian"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-text">
+                <h2>
+                <strong style='color:rgb(148, 20, 20);'>2008年</strong>，草原超载率继续下降 全国重点天然草原的牲畜超载率为32%<br />
+                2009年由于气候干暖异常，气温偏高，旱情严重，全国草原植被总体生长状况略差于上年，天然草原鲜草总产量93840.86万吨，比上年下降0.92％；折合干草约29363.77万吨，比上年下降0.89％；载畜能力约23098.81万羊单位，比上年下降0.34％。全国重点天然草原的牲畜超载率为31.2％，较上年下降0.8个百分点。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style='color:rgb(148, 20, 20);'>2010年</strong>，牲畜超载率为30％<br />
+                    <strong style='color:rgb(148, 20, 20);'>2011年</strong> 全国草原植被总体生长状况好于上年，属偏好年份；全国天然草原鲜草总产量达100248.26万吨，较上年增加2.68％；折合干草约31322.01万吨，载畜能力约为24619.93万羊单位，均较上年增加2.53％。全国草原综合植被盖度为51％。全国重点天然草原的牲畜超载率为28％，<br />
+                    较上年下降了2个百分点。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style='color:rgb(148, 20, 20);'>2012年</strong>全国天然草原鲜草总产量达104962万吨，较上年增加4.7％，为2005年农业部开展全国草原监测工作以来鲜草产量最高的一年；折合干草约32387.5万吨，载畜能力约为25457万羊单位，均较上年增加3.4％。全国重点天然草原牲畜超载率为23％，较上年下降5个百分点，比2006年降低11个百分点。全国各类草原违法案件发案18651起，立案18060起，立案率为96.8％，共破坏草原8008.3公顷，买卖或者
+                    <br />非法流转草原7181.3公顷。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style='color:rgb(148, 20, 20);'>2013年</strong>我国草原保护建设力度进一步加大，草原生态保护补助奖励奖机制、退牧还草工程等强牧惠牧政策深入落实，草原禁牧、草畜平衡等制度在草原牧区全面推行，草原畜牧业生产方式加快转变，全国天然草原鲜草产量再创新高，草原生态呈现出加快恢复的良好态势。2013年，全国天然草原鲜草总产量达到105581.2万吨，较上年增加0.59％，为近10年来最高。折合干草约32542.9万吨，载畜能力约为25579.2万羊单位，<br />
+                    <strong style="color:rgb(43, 109, 209)">均较上年增加0.48％。23.48%</strong> 
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style='color:rgb(148, 20, 20);'>2014年</strong>，
+                    <strong style="color:blue;">全国重点天然草原的平均牲畜超载率为15.2％</strong>，较上年下降1.6个百分点。全国268个牧区半牧区县（旗、市）天然草原的平均牲畜超载率为19.4％，
+                    较上年下降1.9个百分点，其中，牧区县平均牲畜超载率为20.6％，半牧区县平均牲畜超载率为15.6％。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style='color:rgb(148, 20, 20);'>2015年</strong>：牲畜超载率13.5%
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style='color:rgb(148, 20, 20);'>2016年</strong>全国天然草原鲜草总产量103864.86万吨，连续6年超过10亿吨，
+                    载畜能力较上年增加0.93％；全国草原综合植被盖度达到了54.6％，重大生态工程区草原植被盖度比非工程区平均高出21个百分点，高度、鲜草产量平均增加46.1％和56.3％，草原植被状况明显改善；全国重点天然草原的平均牲畜超载率为12.4％，全国268个牧区半牧区县（旗、市）
+                    天然草原的平均<strong style="color:rgb(43, 109, 209)">牲畜超载率为15.5％</strong>，分别较上年下降了1.1个百分点和1.5个百分点，草原利用状况更趋合理。
+                </h2>
+            </div>
+            <!-- 第二个文本框 -->
+            <section class="box-text">
+                <div class="nav-left" style="float:left;position: absolute; top:0.5%; left: 0%;z-index: 990;">         
+                    <p style="font-family: 华文琥珀;font-size: 36px;color: #c1ffa6;">（来源:中华人民中国农业农村部）</p>
+                </div> 
+            </section>
+            <div class="box-text" style="margin-top: -150px;">
+                <div style="height: 45%; width: 100%;">
+                    <div style="font-size:25px ;border: 1px solid #000; padding: 20px; width: 30%; float: left;">
+                        &nbsp;&nbsp;&nbsp;根据国家统计局《第三次全国国土调查主要数据公报》可以看出:我国耕地面积占比较大，大规模发展种植业可能会引发过度灌溉，‌从而导致地下水水位上升，‌把地下水中的盐分也带到地表上来。‌在蒸发过程中，‌盐分停留在地表，‌最终会导致土地盐渍化、‌荒漠化。过度农垦，‌尤其是过度放牧和开垦，‌会导致沙质土壤裸露出来，‌这些土壤极易遭受风蚀。‌同时，‌由于土壤肥力逐年下降，‌土地可能会被弃耕。‌废弃的耕地由于植被恢复困难，‌会继续遭受风蚀，‌从而变成流沙地，‌加速荒漠化的进程。
+                    </div>
+                    <div style="border: 1px solid #000; padding: 1px; width: 60%; float: right;">
+                        <div id="pieChart"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-text"></div>
+            <div class="box-text">
+                <h2>
+                    <strong style="color: rgb(148, 20, 20);">“三调”</strong> 以2019年12月31日为标准时点，
+                    <strong style="color: rgb(148, 20, 20);">全面查清了全国国土利用状况</strong>，建立了覆盖国家、省、地、县四级的国土调查数据库。
+                    <br />全面掌握了全国主要地类数据：<br />
+                    <strong style="color:rgb(43, 109, 209)">（一）耕地12786.19万公顷（191792.79万亩）。</strong>其中，水田3139.20万公顷（47087.97万亩），占24.55%；水浇地3211.48<br />
+                    <strong style="color:rgb(43, 109, 209)">（二）园地2017.16万公顷（30257.33万亩）。</strong>其中，果园1303.13万公顷（19546.88万亩），占64.60%；茶园168.47万公顷（2527.05万亩），占8.35%；橡胶园151.43万公顷（2271.48万亩），占7.51%；其他园地394.13万公顷（5911.93万亩），占19.54%。<br />
+                    <strong style="color:green">（三）林地28412.59万公顷（426188.82万亩）。</strong>其中，乔木林地19735.16万公顷（296027.43万亩），占69.46%；竹林地701.97万公顷（10529.53万亩），占2.47%；灌木林地5862.61万公顷（87939.19万亩），占20.63%；其他林地2112.84万公顷（31692.67万亩），占7.44%。<br />
+                    <strong style="color:green">（四）草地26453.01万公顷（396795.21万亩）。</strong>其中，天然牧草地21317.21万公顷（319758.21万亩），占80.59%；人工牧草地58.06万公顷（870.97万亩），占0.22%；其他草地5077.74万公顷（76166.03万亩），占19.19%。<br />
+                    <strong style="color:green">（五）湿地2346.93万公顷（35203.99万亩）。</strong>湿地是“三调”新增的一级地类，包括7个二级地类。其中，红树林地2.71万公顷（40.60万亩），占0.12%；森林沼泽220.78万公顷（3311.75万亩），占9.41%；灌丛沼泽75.51万公顷（1132.62万亩），占3.22%；沼泽草地1114.41万公顷（16716.22万亩），占47.48%；沿海滩涂151.23万公顷（2268.50万亩），占6.44%；内陆滩涂588.61万公顷（8829.16万亩），占25.08%；沼泽地193.68万公顷（2905.15万亩），占8.25%。<br />
+                    <strong style="color:rgb(43, 109, 209)">（六）城镇村及工矿用地3530.64万公顷（52959.53万亩）。</strong>其中，城市用地522.19万公顷（7832.78万亩），占14.79%；建制镇用地512.93万公顷（7693.96万亩），占14.53%；村庄用地2193.56万公顷（32903.45万亩），占62.13%；采矿用地244.24万公顷（3663.66万亩），占6.92%；风景名胜及特殊用地57.71万公顷（865.68万亩），占1.63%。<br />
+                    <strong style="color:rgb(43, 109, 209)">（七）交通运输用地955.31万公顷（14329.61万亩）。</strong>其中，铁路用地56.68万公顷（850.16万亩），占5.93%；轨道交通用地1.77万公顷（26.52万亩），占0.18%；公路用地402.96万公顷（6044.47万亩），占42.18%；农村道路476.50万公顷（7147.56万亩），占49.88%；机场用地9.63万公顷（144.41万亩），占1.01%；港口码头用地7.04万公顷（105.64万亩），占0.74%；管道运输用地0.72万公顷（10.85万亩），占0.08%。占0.74%；管道运输用地0.72万公顷（10.85万亩），占0.08%。<br />
+                    <strong style="color:rgb(43, 109, 209)">（八）水域及水利设施用地3628.79万公顷（54431.78万亩）。</strong>其中，河流水面880.78万公顷（13211.75万亩），占24.27%；湖泊水面846.48万公顷（12697.16万亩），占23.33%；水库水面336.84万公顷（5052.55万亩），占9.28%；坑塘水面641.86万公顷（9627.86万亩），占17.69%；沟渠351.75万公顷（5276.27万亩），占9.69%；水工建筑用地80.21万公顷（1203.19万亩），占2.21%；冰川及常年积雪490.87万公顷（7362.99万亩），占13.53%。<br />
+
+                </h2>
+            </div>
+             <!-- 第三个文本框 -->
+             <section class="box-text">
+                <div class="nav-left" style="float:left;position: absolute; top:0.5%; left: 0%;z-index: 990;">         
+                    <p style="font-family: 华文琥珀;font-size: 36px;color: #c1f6aa;">（来源：国家统计局《第三次全国国土调查主要数据公报》）</p>
+                </div> 
+            </section>
+            <div class="box-text" style="margin-top: -230px;">
+                <div style="height: 85%; width: 80%;">
+                    <div style="font-size:25px; width: 60%; float: left; height: 200%;">
+                        <div style="font-size:25px; border: 1px solid #000; padding: 2px; width: 100%; height: 100%;float: top;">
+                            <div id="pieChart2"></div>
+                        </div>
+                        <!-- 散点图 -->
+                        <div style="font-size:25px ;border: 1px solid #000; padding: 3px; width: 100%; height: 100%;float:bottom;">
+                            <div id="sandian"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="font-size:25px ;border: 1px solid #000; padding: 30px; width: 37%; float: right;">
+                        &nbsp;&nbsp;&nbsp;我国全国用水总量中农业用水为3672.4亿m3，占用水总量的62.2%，
+                        占比最大。而农田灌溉水有效利用系数在0.6以下，表明灌溉田间可被作物吸收利用的水量少，灌溉水的利用率较小，水资源浪费现象较大，水资源利用不当，加剧了沙漠化现象。
+                        农田灌溉水有效利用系数=
+                        灌溉田间可被作物吸收利用的水量(立方米)
+                        灌溉系统取用的灌溉总水量(立方米)
+                    </div>
+                </div>
+            </div>
+            <div class="box-text"></div>
+            <div class="box-text">
+                <h2>
+                    2023年，全国用水总量为5906.5亿m3。<br />
+                    其中<br />
+                    <strong style="color: rgb(148, 20, 20);">生活用水</strong>为909.8亿m3，占用水总量的<strong style="color: rgb(148, 20, 20);">15.4%</strong>；<br />
+                    <strong style="color: rgb(148, 20, 20);">工业用水</strong>为970.2亿m3（其中火核电直流冷却水490.0亿m3），占用水总量的<strong style="color: rgb(148, 20, 20);">16.4%；</strong><br />
+                    <strong style="color: rgb(148, 20, 20);">农业用水</strong>为3672.4亿m3，占用水总量的<strong style="color: rgb(148, 20, 20);">62.2%；</strong><br />
+                    <strong style="color: rgb(148, 20, 20);">人工生态环境补水</strong>为354.1亿m3，占用水总量的<strong style="color: rgb(148, 20, 20);">6.0%</strong>。<br />
+                    地表水源供水量为4874.7亿m3，占供水总量的82.5%；<br />
+                    地下水源供水量为819.5亿m3，占供水总量的13.9%；<br />
+                    非常规水源供水量为212.3亿m3，占供水总量的3.6%。<br />
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style="color: rgb(148, 20, 20);">2020年,</strong>全国人均综合用水量412m3，万元国内生产总值（当年价）用水量57.2m3。
+                    耕地实际灌溉亩均用水量356m3， <strong style="color:rgb(43, 109, 209)">农田灌溉水有效利用系数0.565，</strong>
+                    万元工业增加值（当年价）用水量32.9m3，城镇人均生活用水量（含公共用水）207L/d，农村居民人均生活用水量100L/d。与2015年相比，万元国内生产总值用水量和万元工业增加值用水量分别下降28.0%和39.6%（按可比价计算）。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style="color: rgb(148, 20, 20);">2021年</strong>，全国人均综合用水量为419立方米，万元国内生产总值（当年价）
+                    用水量为51.8立方米。耕地实际灌溉亩均用水量为355立方米，
+                    <strong style="color:rgb(43, 109, 209)">农田灌溉水有效利用系数为0.568，</strong>
+                    万元工业增加值（当年价）用水量为28.2立方米，人均生活用水量（含公共用水）为176L/d，
+                    城乡居民人均用水量为124L/d。与2020年相比
+                    ，万元国内生产总值用水量和万元工业增加值用水量分别下降5.8%和7.1%（按可比价计算）。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style="color: rgb(148, 20, 20);">2022年</strong>《中国水资源公报》。公报显示，
+                    2022年全国人均综合用水量为425立方米，万元国内生产总值（当年价）用水量为49.6立方米，
+                    万元工业增加值（当年价）用水量为24.1立方米。耕
+                    地实际灌溉亩均用水量为364立方米，<strong style="color:rgb(43, 109, 209)">农田灌溉水有效利用系数为0.572</strong>，
+                    其中，与2021年相比，
+                    万元国内生产总值用水量和万元工业增加值用水量分别下降1.6%和10.8%（按可比价计算）。
+                </h2>
+            </div>
+            <div class="box-text">
+                <h2>
+                    <strong style="color: rgb(148, 20, 20);">2023年</strong>，全国人均综合用水量为419m3，万元国内生产总值（当年价）用水量为46.9m3。
+                    耕地实际灌溉亩均用水量为347m3，<strong style="color:rgb(43, 109, 209)">农田灌溉水有效利用系数为0.576</strong>，万元工业增加值
+                    （当年价）用水量为24.3m3，人均生活用水量为177L/d（其中人均居民生活用水量为125L/d）。
+                    与2022年相比，
+                    万元国内生产总值用水量和万元工业增加值用水量分别下降6.4%和3.9%（按可比价计算）
+                </h2>
+            </div>
+             <!-- 第四个文本框 -->
+             <section class="box-text">
+                <div class="nav-left" style="float:left;position: absolute; top:0.5%; left: 0%;z-index: 990;">         
+                    <p style="font-family: 华文琥珀;font-size: 36px;color: green">（来源：中华人民共和国水利部《中国水资源公报》）</p>
+                </div> 
+            </section>
+            <div class="box-text" style="margin-top: -150px;">
+                <div style="height: 50%; width: 100%;">
+                    <div style="font-size:25px ;border: 1px solid #000; padding: 20px; width: 30%; float: left;">
+                        &nbsp;&nbsp;&nbsp;过度樵采是导致沙漠化的一个重要人为因素。‌在能源缺乏的情况下，‌人们为了获取燃料和木材，‌会大量砍伐树木和灌木。‌这种行为不仅破坏了植被，‌还导致了土地表面的不稳定，‌加速了土壤的侵蚀和退化。‌缺乏植被的保护，‌土地容易受到风蚀和水蚀的作用，‌进一步加剧了土地的沙漠化过程。‌此外，‌过度樵采还可能导致生态环境失衡，‌影响生物多样性，‌从而加剧沙漠化的速度和程度。
+                    </div>
+                    <div style="border: 1px solid #000; padding: 1px; width: 60%; float: right;">
+                        <div id="pieChart3"></div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="box-text"></div>
+            <div class="box-text">
+                <h2>
+                    [张永利]第二，<strong style="color:rgb(43, 109, 209)">过度樵采</strong>薪材在农村农业结构当中，
+                    占比达到<strong style="color:rgb(43, 109, 209)">40%</strong>左右。
+                    高强度的集中连片樵采容易导致植被破坏、土壤流失，加重了石漠化。
+                    第三，过度放牧，岩溶地区的牲畜一般是放养，不仅破坏植被，
+                    而且破坏地表，加重了水土流失和石漠化。第四，无序的工矿建设开发也加重了石漠化。　[2012-06-14]
+                </h2>
+            </div>       
+            <div class="box-text"></div>
+    </div>
+
+</body>
+<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="./js/text-part3.js"></script>
+<script src="./js/Shuye.js"></script>
+<script src="./js/index.js"></script>
+<script src="./js/partzx.js"></script>
+<script>
+    // 页面加载完成后调用折线图函数和饼图函数
+    document.addEventListener('DOMContentLoaded', function() {
+        zhexian(); // 调用折线图函数
+        pieChart(); // 调用饼图函数
+        pieChart2(); // 调用饼图函数
+        sandian(); // 调用散点图函数
+        pieChart3(); // 调用饼图函数
+
+    });
+</script>
+
+</html>

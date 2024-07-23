@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/text-part3.css">
+    <style>
+        /* 默认网页缩放百分之100%显示 */
+        @media (max-width: 1889px) and (min-width: 1200px) {
+            html {
+                zoom: 90%;
+            }
+
+            @-ms-viewport {
+                width: 1889px;
+            }
+        }
+    </style>
+    <title>绿色坚守</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+            /* 确保在最顶层 */
+        }
+
+        /* 图片来源星球研究所*/
+        .background {
+            background-image: url("https://mmbiz.qpic.cn/mmbiz_jpg/PziaXk2Dvl07BvcQFic7tdHYuw0Kwdkqib5Wicb4msj8Hr2T4TanepQKKgUou3TNp7KDT0kGqQIo5BtmgGx16TLPIA/640?wx_fmt=jpeg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1");
+            background-size: cover;
+            background-position: 50% 50%;
+            height: 200vh;
+            /* 修改为auto */
+            font: 900 18rem '';
+            line-height: 130vh;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+            animation: moveBackground 10s linear infinite;
+        }
+
+        .background::before {
+            content: '';
+            background-size: cover;
+            background-image: inherit;
+            background-position: 50% 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: -99;
+        }
+
+        h1 {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            letter-spacing: 10px;
+            color: #fff;
+        }
+
+        h3 {
+            position: absolute;
+            letter-spacing: 2px;
+            top: 120vh;
+            width: 60%;
+            color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 30px;
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        .wrap {
+            width: 100%;
+            position: center;
+            top: 100px;
+            z-index: 100;
+        }
+
+        .wrap::after {
+            content: '';
+            position: absolute;
+            top: 225vh;
+            left: 50%;
+            width: 5px;
+            z-index: -299;
+            height: 1800px;
+            background-color: #a6ff00;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .left,
+        .right {
+            position: relative;
+            width: 40%;
+            height: 190px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 25px;
+            padding:20px;
+            color: rgb(90, 90, 90);
+            /* background-color: rgba(255,255,255,.5); */
+        }
+
+        .box:nth-child(even) .left {
+            background-color: rgba(129, 214, 45, 0.474);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+
+        .box:nth-child(odd) .right {
+            background-color: rgba(129, 214, 45, 0.474);
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+
+        .center {
+            width: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center>span {
+            margin-top: 12vh;
+            width: 150px;
+            border-radius: 10px;
+            text-align: center;
+            font: 940 35px '';
+            line-height: 69px;
+            background-color: #a6ff00;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas style="opacity: 0.8;"></canvas>
+    <div class="container">
+        <div>
+            <h1>绿色坚守<br />中国沙漠治理的持续战役——治沙道路探索</h1>
+
+            <div class="background"><span></span>绿色坚守</div>
+            <h3 style="font-size: 35px;text-align: center;">
+                新中国成立以来，我国一直高度重视防治荒漠化，通过一系列强力措施，
+                成功遏制了荒漠化在我国的扩展态势。近年来，政府也一直在践行绿水青山就是金山银山的理念。
+            </h3>
+        </div>
+        <div class="box"></div>
+        <div class="wrap">
+            <div class="box">
+                <div class="left"></div>
+                <div class="center"><span>
+                        1954年
+                    </span></div>
+                <div class="right">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        建立沙漠科学研究站<br />
+                    </span>
+                    我国第一个沙漠科学研究站在宁夏中卫建立，麦草方格治沙技术被首次提出，有效阻止了沙漠扩张
+                </div>
+            </div>
+            <div class="box">
+                <div class="left">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        “绿化祖国”号召<br />
+                    </span>
+                    1956年3月，毛主席向全国人民发出了“绿化祖国”的伟大号召。在“绿化祖国”的号召和推动下，大规模植树造林、绿化祖国的活动由此展开。
+                </div>
+                <div class="center"><span>
+                        1956年
+                    </span></div>
+                <div class="right"></div>
+            </div>
+            <div class="box">
+                <div class="left"></div>
+                <div class="center"><span>
+                        1958年
+                    </span></div>
+                <div class="right">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        成立中国科学院治沙队<br />
+                    </span>
+                    1958年，国务院成立治沙领导小组，中国科学院治沙队正式成立。6个治沙综合试验站相继设立，我国西北沙区定点试验研究布局初步形成。
+                </div>
+            </div>
+            <div class="box">
+                <div class="left">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        成立中国科学院治沙队<br />
+                    </span>
+                    1978年，三北防护林体系建设工程正式启动，揭开了我国大规模生态建设的序幕。工程建设期限从1978年开始到2050年结束，分三个阶段、八期工程进行。工程区横跨北方13个省（区、市）的551个县（旗），总面积达406.9万平方公里，占国土面积的42.4%。
+                </div>
+                <div class="center"><span>
+                        1978年
+                    </span></div>
+                <div class="right"></div>
+            </div>
+            <div class="box">
+                <div class="left"></div>
+                <div class="center"><span>
+                        1989年
+                    </span></div>
+                <div class="right">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        长江流域防护林体系建设工程<br />
+                    </span>
+                    1989年，长江流域防护林体系建设工程启动，整个工程涉及长江流域内17个省份1035个县市区，总面积216.2万平方公里。这是全球第一个进行大江大河全流域治理的世界超级生态工程。工程实施30多年来，累计完成造林1184万公顷。
+                </div>
+            </div>
+            <div class="box">
+                <div class="left">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        《联合国防治荒漠化公约》缔约国<br />
+                    </span>
+                    1996年，中国成为《联合国防治荒漠化公约》缔约国，每年世界防治荒漠化和干旱日都会采取多种形式进行宣传。20多年来，中国在荒漠化治理的道路上勇于探索、积极行动，为防治荒漠化这个世界难题提供了防沙治沙的中国方案。
+                </div>
+                <div class="center"><span>
+                        1996年
+                    </span></div>
+                <div class="right"></div>
+            </div>
+            <div class="box">
+                <div class="left">
+                </div>
+                <div class="center"><span>
+                        1999年
+                    </span></div>
+                <div class="right">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        退耕还林<br />
+                    </span>
+                    1999年，四川、陕西、甘肃3省率先开展了退耕还林试点，由此揭开了我国退耕还林的序幕。2002年1月10日，国务院西部开发办公室召开退耕还林工作电视电话会议，确定全面启动退耕还林工程。
+                </div>
+            </div>
+            <div class="box">
+                <div class="left">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        京津风沙源治理工程<br />
+                    </span>
+                    2000年，京津风沙源治理工程启动。工程区西起内蒙古的达茂旗，东至内蒙古的阿鲁科尔沁旗，南起山西的代县，北至内蒙古的东乌珠穆沁旗，涉及北京、天津、河北、山西及内蒙古等五省（区、市）的75个县（旗）。工程区总人口1958万人，总面积45.8万平方公里，沙化土地面积10.12万平方公里。
+                </div>
+                <div class="center"><span>
+                        2000年
+                    </span></div>
+                <div class="right"></div>
+            </div>
+            <div class="box">
+                <div class="left">
+
+                </div>
+                <div class="center"><span>
+                        2001年
+                    </span></div>
+                <div class="right">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        《防沙治沙法》出台<br />
+                    </span>
+                    2001年，《中华人民共和国防沙治沙法》出台，中国成为世界上第一个为荒漠化防治专门立法的国家。
+                </div>
+            </div>
+            <div class="box">
+                <div class="left">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        《防沙治沙法》正式实施<br />
+                    </span>
+                    2002年1月1日，‌防沙治沙法正式实施，‌标志着中国防沙治沙步入了法治化轨道，‌进入了一个崭新的发展阶段。‌这一法律的实施有力推动了防沙治沙事业的发展，‌取得了重要成果，‌如防沙治沙步伐明显加快，‌沙化土地状况发生了积极变化
+                </div>
+                <div class="center"><span>
+                        2002年
+                    </span></div>
+                <div class="right"></div>
+            </div>
+            <div class="box">
+                <div class="left">
+                </div>
+                <div class="center"><span>
+                        2013年
+                    </span></div>
+                <div class="right">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        甘肃视察嘱托<br />
+                    </span>
+                    2013年，习近平总书记在甘肃考察时强调：“特别要实施好石羊河流域综合治理和防沙治沙及生态恢复项目，确保民勤不成为第二个罗布泊。”
+                </div>
+            </div>
+            <div class="box">
+                <div class="left">
+                    <span style="font-size: 30px;font-weight: bold;">
+                        沿海防护林体系工程<br />
+                    </span>
+                    2016年，沿海防护林体系工程启动。全国沿海防护林体系建设工程规划范围包括沿海11个省（自治区、直辖市）、5个计划单列市的344个县（市、区），土地总面积4276.99万公顷，其中林地1832.96万公顷，占土地总面积的42.86%。
+                </div>
+                <div class="center"><span>
+                        2016年
+                    </span></div>
+                <div class="right"></div>
+            </div>
+            <div class="box-text" style="float: left; ">
+                <h2> 40年，森林覆盖率从4.8%提高到17.91%！一个“绿洲奇迹”的由来……<br /></h2>
+            </div>
+            <div class="box-text" style="float: left; ">
+                <img style="width:40%;height:200%;"
+                    src="https://ts1.cn.mm.bing.net/th/id/R-C.09437222dc590a1f999e834a63e66aeb?rik=0RpSYG8aVQq%2fTw&riu=http%3a%2f%2fimg.wezhan.cn%2fcontent%2fsitefiles%2f56093%2fimages%2f12477547_800-2.jpeg&ehk=XIIC18jCISh9sAdnLlIzimZREWJVmjMj9wjDRJUj8W0%3d&risl=&pid=ImgRaw&r=0">
+            </div>
+            <div class="box-text" style="float: left; ">
+                <h2>
+                    政策<br />
+                    大河奔流滋润大漠绿洲<br />
+                    民勤县位于甘肃省，是中国沙漠治理的重要区域之一。为了支持该地区的
+                    生态恢复与治沙工作，<br />中国政府实施了一系列政策，包括调水工程，比
+                    如“引黄入石”工程，将黄河之水引入石羊河流域，<br />保障了民勤的水资源供应。
+                </h2>
+            </div>
+            <div class="box-text" style="float: left; ">
+                <img style="width:40%;height:200%;" src="https://www.dljs.net/uploads/allimg/1809/1Z4314a3-0.jpg">
+            </div>
+            <div class="box-text" style="float: left; ">
+                <h2>
+                    <strong style="color:black;">社会支持</strong><br />
+                    媒体的广泛宣传提高了公众对荒漠化问题的认识，激发了社会各界对治沙工作的关注与参与。不少环保组织和志愿者团队加入到治沙的行列中，通过植树造林、宣传教育等活动，共同推动沙漠治理。
+                </h2>
+            </div>
+            <div class="box-text" style="float: left; ">
+                <h2>
+                    <strong style="color:black;">当地人民的努力</strong><br />
+                    民勤当地人是治沙工作的主力军。他们采用了多种方法来治理沙漠，如建设草方格、进行梭梭和白刺等植被的种植，以及实施封沙育林等措施。这些方法有效地固定了沙土，减缓了沙漠化的进程。民勤人民在与自然抗争的过程中展现了极高的决心和努力。
+                </h2>
+            </div>
+            <div class="box-text" style="float: left; ">
+                <h2>
+                    <strong style="color:black;">治沙植物</strong><br />
+                    在治沙过程中，梭梭树、白刺和红柳等植物发挥了重要作用。梭梭树因其强大的生命力和抗逆性，成为治沙的首选树种。白刺则因其能在极其干旱的条件下生存，被广泛用于流动沙地的固沙。红柳则主要用于河岸的固土和美化环境。
+                </h2>
+            </div>
+            <div class="box-text" style="float: left; ">
+                <h2>
+                    <strong style="color:black;">成果</strong><br />
+                    从20世纪末开始，民勤县就开始了系统的治沙工作。到2020年，民勤县累计完成治沙造林面积达到数十万亩，种植各类树木数千万株，极大地改善了当地的生态环境。通过持续的水资源管理和植被恢复，民勤的森林覆盖率显著提高，荒漠化趋势得到有效控制。
+                </h2>
+            </div>
+        </div>
+        <div class="box-text" style="float: left; "></div>
+    </div>
+
+</body>
+<script src="./js/text-part3.js"></script>
+<script src="./js/Shuye.js"></script>
+<script>
+    const background = document.querySelector(".background")
+
+    document.addEventListener('scroll', () => {
+        const scrollY = window.scrollY
+
+        if (scrollY !== 0) {
+            background.style.backgroundPosition = `calc(50% + ${scrollY}px) calc(50% + ${scrollY}px)`
+        } else {
+            background.style.backgroundPosition = ''
+        }
+    })
+</script>
+
+</html>
